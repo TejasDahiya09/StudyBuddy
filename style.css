@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.simple-slider {
+   display: flex;
+  justify-content: center;
+  background-color: #002244;
+  padding: 12px 0;
+  overflow: hidden;
+}
+
+.simple-slider {
+  display: flex;
+  justify-content: center;
+  background-color: #002244;
+  padding: 12px 0;
+  overflow: hidden;
+}
+
+.slider-content {
+  display: inline-flex;
+  gap: 30px;
+  white-space: nowrap;
+  animation: scroll-smooth 12s linear infinite;
+  padding: 0 20px;
+}
+
+.slider-content span {
+  display: inline-block;
+}
+
+.slider-content a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.slider-content a:hover {
+  background-color: #ffffff33;
+  color: #ffcc00;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: underline;
+}
+
+@keyframes scroll-smooth {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.simple-slider:hover .slider-content {
+  animation-play-state: paused;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  background-color: #e2e8f0;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #002855;
+}
+
+footer {
+  background-color: #002b5c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+/* HERO SECTION UPDATE */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #003366, #004080, #0059b3);
+  color: white;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* EXPLORE NOTES BUTTON UPDATE */
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background: #ffcc00;
+  color: #003366;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background: #ffd633;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
