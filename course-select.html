@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Course – StudyBuddy</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #003366;
+    }
+
+    .course-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .course-buttons button {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .course-buttons button:hover {
+      background-color: #002855;
+    }
+
+    .back-link {
+      margin-top: 2rem;
+      display: inline-block;
+      color: #004080;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StudyBuddy</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course-select.html">Materials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Select Your Course</h2>
+    <div class="course-buttons">
+      <button onclick="goToCourse('btech-cse')">BTech CSE</button>
+      <button onclick="goToCourse('coming-soon')">BCA</button>
+      <button onclick="goToCourse('coming-soon')">MCA</button>
+      <button onclick="goToCourse('coming-soon')">MBA</button>
+      <button onclick="goToCourse('coming-soon')">Law</button>
+      <button onclick="goToCourse('coming-soon')">BBA</button>
+    </div>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </main>
+
+  <footer>
+    <p>© 2025 StudyBuddy Team</p>
+  </footer>
+
+  <script>
+    function goToCourse(target) {
+      if (target === 'btech-cse') {
+        window.location.href = "btech-cse.html";
+      } else {
+        window.location.href = "coming-soon.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

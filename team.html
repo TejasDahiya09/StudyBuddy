@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Team – StudyBuddy</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .team-container {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .team-container h2 {
+      font-size: 2rem;
+      color: #003366;
+      margin-bottom: 2rem;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .member-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 250px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .member-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #004080;
+    }
+
+    .member-card p {
+      margin-bottom: 0.5rem;
+      color: #666;
+    }
+
+    .member-card a {
+      color: #004080;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="studybuddy-heading">StudyBuddy</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course-select.html">Materials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="team-container">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+      <div class="member-card">
+        <img src="images\tejas.jpeg" alt="Tejas">
+        <h3>Tejas Dahiya</h3>
+        <p></p>
+        <a href="https://www.linkedin.com/in/tejas-dahiya/">LinkedIn</a>
+      </div>
+      <div class="member-card">
+        <img src="images/lucky.jpeg" alt="Member 2">
+        <h3>Lucky Jaglan</h3>
+        <p></p>
+        <a href="https://www.linkedin.com/in/lucky-jaglan-5994a92b0/">LinkedIn</a>
+      </div>
+      <div class="member-card">
+        <img src="images\harsh.jpeg" alt="Member 3">
+        <h3>Harsh Rathi</h3>
+        <p></p>
+        <a href="https://www.linkedin.com/in/harsh-rathi-71a717270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">LinkedIn</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 StudyBuddy Team</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Branch Info – StudyBuddy</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .step-card {
+      display: none;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .step-card.active {
+      display: block;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .options-grid button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .options-grid button:hover {
+      background-color: #002855;
+    }
+
+    .step-nav {
+      display: flex;
+      justify-content: space-between;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .step-nav button {
+      background-color: #004080;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .step-nav button:hover {
+      background-color: #002855;
+    }
+
+    #submitBtn {
+      background-color: #007b33;
+    }
+
+    #submitBtn:hover {
+      background-color: #005a24;
+    }
+
+    .summary {
+      text-align: center;
+      background-color: #e0e7ff;
+      padding: 1rem;
+      font-weight: bold;
+      color: #003366;
+    }
+
+    .progress-container {
+      width: 100%;
+      background-color: #ccc;
+      height: 8px;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background-color: #004080;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    footer {
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StudyBuddy</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course-select.html">Materials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="summary" id="summaryDisplay">Selected: —</div>
+  <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+
+  <main>
+    <div class="step-card active" id="step1">
+      <h2>Choose Specialization</h2>
+      <div class="options-grid">
+        <button onclick="selectOption('specialization', 'CSE')">CSE – CORE</button>
+        <button onclick="selectOption('specialization', 'CSE – DSAI')">CSE – DSAI</button>
+        <button onclick="selectOption('specialization', 'CSE – IoT')">CSE – IoT</button>
+        <button onclick="selectOption('specialization', 'CSE – Cyber Security')">CSE – Cyber Security</button>
+      </div>
+      <div class="step-nav">
+        <span></span>
+        <button onclick="nextStep()">Next</button>
+      </div>
+    </div>
+
+    <div class="step-card" id="step2">
+      <h2>Choose Year</h2>
+      <div class="options-grid">
+        <button onclick="selectOption('year', '1st Year')">1st Year</button>
+        <button onclick="selectOption('year', '2nd Year')">2nd Year</button>
+        <button onclick="selectOption('year', '3rd Year')">3rd Year</button>
+        <button onclick="selectOption('year', '4th Year')">4th Year</button>
+      </div>
+      <div class="step-nav">
+        <button onclick="prevStep()">Back</button>
+        <button onclick="nextStep()">Next</button>
+      </div>
+    </div>
+
+    <div class="step-card" id="step3">
+      <h2>Choose Semester</h2>
+      <div class="options-grid" id="semesterButtons">
+        <!-- Semester buttons will be dynamically inserted -->
+      </div>
+      <div class="step-nav">
+        <button onclick="prevStep()">Back</button>
+        <button id="submitBtn" onclick="goToMaterials()">View Materials</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 StudyBuddy Team</p>
+  </footer>
+
+  <script>
+    let currentStep = 1;
+    const data = { specialization: '', year: '', semester: '' };
+
+    function updateSummary() {
+      const s = data.specialization || '—';
+      const y = data.year ? ' > ' + data.year : '';
+      const sm = data.semester ? ' > ' + data.semester : '';
+      document.getElementById('summaryDisplay').innerText = `Selected: ${s}${y}${sm}`;
+    }
+
+    function updateProgressBar() {
+      const progress = ((currentStep - 1) / 2) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+    }
+
+    function selectOption(type, value) {
+      data[type] = value;
+      updateSummary();
+    }
+
+    function populateSemesters() {
+      const semesterMap = {
+        '1st Year': ['Semester 1', 'Semester 2'],
+        '2nd Year': ['Semester 3', 'Semester 4'],
+        '3rd Year': ['Semester 5', 'Semester 6'],
+        '4th Year': ['Semester 7', 'Semester 8']
+      };
+
+      const semGrid = document.getElementById('semesterButtons');
+      semGrid.innerHTML = "";
+
+      const semesters = semesterMap[data.year] || [];
+      semesters.forEach(sem => {
+        const btn = document.createElement('button');
+        btn.textContent = sem;
+        btn.onclick = () => selectOption('semester', sem);
+        semGrid.appendChild(btn);
+      });
+    }
+
+    function nextStep() {
+      if (currentStep < 3) {
+        document.getElementById('step' + currentStep).classList.remove('active');
+        currentStep++;
+        document.getElementById('step' + currentStep).classList.add('active');
+        updateProgressBar();
+
+        if (currentStep === 3) {
+          populateSemesters();
+        }
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        document.getElementById('step' + currentStep).classList.remove('active');
+        currentStep--;
+        document.getElementById('step' + currentStep).classList.add('active');
+        updateProgressBar();
+      }
+    }
+
+    function goToMaterials() {
+      if (data.specialization && data.year && data.semester) {
+        const semNumber = data.semester.match(/\d+/)?.[0];
+        if (!semNumber) {
+          alert("Invalid semester selected.");
+          return;
+        }
+
+        if (data.specialization === "CSE – DSAI") {
+          const url = `materials(dsai-${semNumber}sem).html?specialization=${encodeURIComponent(data.specialization)}&year=${encodeURIComponent(data.year)}&semester=${encodeURIComponent(data.semester)}`;
+          window.location.href = url;
+        } else {
+          window.location.href = "coming-soon.html";
+        }
+      } else {
+        alert('Please select all fields.');
+      }
+    }
+
+    updateProgressBar();
+  </script>
+
+</body>
+</html>
