@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyBuddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>StudyBuddy</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course-select.html">Materials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="simple-slider">
+  <div class="slider-content">
+    <span><a href="btech-cse.html">BTech CSE</a></span>
+    <span><a href="coming-soon.html">BCA</a></span>
+    <span><a href="coming-soon.html">MCA</a></span>
+    <span><a href="coming-soon.html">MBA</a></span>
+    <span><a href="coming-soon.html">Law</a></span>
+    <span><a href="coming-soon.html">BBA</a></span>
+    <span><a href="coming-soon.html">Commerce</a></span>
+    <span><a href="coming-soon.html">Arts</a></span>
+  </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to StudyBuddy</h2>
+      <p>Your one-stop platform for semester-wise materials!</p>
+      <a href="course-select.html" class="btn">Explore Notes</a>
+    </section>
+    
+    <script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "3b8279ec-91e9-4541-b78e-15600be25f65", // The ID of this integration.
+    region: "eu-de", // The region your integration is hosted in.
+    serviceInstanceID: "3ff66e36-e614-475e-a3ba-3ad9ecab589d", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+  </main>
+
+  <footer>
+    <p>© 2025 StudyBuddy Team</p>
+  </footer>
+
+</body>
+</html>

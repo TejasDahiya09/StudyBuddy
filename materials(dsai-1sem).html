@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyBuddy – Materials</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .selection-summary {
+      text-align: center;
+      margin: 2rem 1rem 1rem;
+      padding: 1rem;
+      background-color: #edf2f7;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    #searchInput {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      width: 90%;
+      max-width: 500px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    #searchInput:focus {
+      border-color: #004080;
+      box-shadow: 0 0 8px rgba(0, 64, 128, 0.2);
+    }
+
+    .materials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+    }
+
+    .subject-card {
+      background: white;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    .subject-card h3 {
+      font-size: 1.5rem;
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+
+    .links button, .links a {
+      margin: 6px;
+      padding: 0.6rem 1.2rem;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .links button:hover, .links a:hover {
+      background-color: #002855;
+    }
+
+    .units {
+      margin-top: 1rem;
+      display: none;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .units a {
+      padding: 0.5rem 1rem;
+      background-color: #005a8d;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .units a:hover {
+      background-color: #003f66;
+    }
+
+    footer {
+      margin-top: auto;
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StudyBuddy</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course-select.html">Materials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="selection-summary">
+      <h2 id="selectedInfo">Loading your selection...</h2>
+      <input type="text" id="searchInput" placeholder="Search subjects...">
+    </section>
+
+    <section class="materials" id="materialsList">
+
+      <div class="subject-card">
+        <h3>Engineering Mathematics – I</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1yxFWuBUk7QfrLWOvvsgcR5RJ2PC4jq-h/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="#">Unit 2</a>
+          <a href="#">Unit 3</a>
+          <a href="#">Unit 4</a>
+          <a href="#">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/1C0umf9nJ5GflEU7eL1_5_D7jzVzHcQMA/view?usp=sharing">B.S. Greywal Higher_Engineering_Mathematics</a>
+          <a href="https://drive.google.com/file/d/10KwpzeQ6l6Yq-3xBJ0cUqXGjcsjKSfwF/view?usp=sharing">H.K. Dass</a>
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/1UAOKibNXfoEzuvxmVXpbpTT1Z2Et3VLu/view?usp=sharing" target="_blank">Question Bank_Matrices</a>
+          <a href="https://drive.google.com/file/d/1Db_VcdiSckc08NyWv1MCf-k_khhOpIQX/view?usp=sharing" target="_blank">Unit 1 Matrices Summary</a>
+          <a href="https://drive.google.com/file/d/16pmla1QiVfn9WjvVY33NwaDdwp3W0bEF/view?usp=sharing" target="_blank">Unit 2 Question Bank</a>
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Basic Electrical Engineering</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/12wGLF4fyoQACo3PyRoJ-gxgfdxlLcpZl/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1Egeczwmd5cDgEAiZu-E6WD-_50JHC1nD/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1TVMloY1QqqE3vLOVYAPz7RJSyJHI5lHz/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1ufSGEiPV0WcpfdOwEBql9TG0rvxY27kV/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="https://drive.google.com/file/d/1pq2Cg66PBxkmwb0ZUjLWfO5ndSDL-Zrr/view?usp=sharing" target="_blank">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="#">Book 1</a>
+          <a href="#">Book 2</a>
+        </div>
+        <div class="units extra-units">
+          <a href="#">Extra 1</a>
+          <a href="#">Extra 2</a>
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Engineering Mechanics</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="#">Unit 1</a>
+          <a href="#">Unit 2</a>
+          <a href="#">Unit 3</a>
+          <a href="#">Unit 4</a>
+          <a href="#">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="#">Book 1</a>
+          <a href="#">Book 2</a>
+        </div>
+        <div class="units extra-units">
+          <a href="#">Extra 1</a>
+          <a href="#">Extra 2</a>
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Engineering Physics</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/128gbOFUJp-WCBGh2taFIRFJTLDhe_Kvt/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1Cc3av8UyeDPXPfQuEw7i5MpT7kXzdnDZ/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1gbqjChVQwc8BF38QIPUaD0LgaEp7Hk7N/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1k0p8EkWTMjqxG2bi7IL8X1UpycPVS3XU/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="https://drive.google.com/file/d/128y9HwUPVB0GwL8trtnKrO5-11KHTMIQ/view?usp=sharing" target="_blank">Unit 5</a>
+        </div>
+        <div class="units books-units">
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/1Eq0cC2cXmhncqSqZ3Fr9PTXrJm2mQt83/view?usp=sharing">BlackBody Photoelectric Compton effect</a>
+          <a href="https://drive.google.com/file/d/1w-QKbEBjxPDJWVC9pmHRl2QpMtM1cDK9/view?usp=sharing">Damped Oscillation  Byjus</a>
+          <a href="https://drive.google.com/file/d/1gHb4b3bxdq1Sq1NWYDKkuV01FeO_c4-E/view?usp=sharing">Forced Harmonic Osciallator</a>
+          <a href="https://drive.google.com/file/d/1Vt_XaeIPRWsarKpV3LgPTswD56l3FY5S/view?usp=sharing">SHM from Brijlal</a>
+          
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Environmental Bioengineering</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="#">Unit 1</a>
+          <a href="#">Unit 2</a>
+          <a href="#">Unit 3</a>
+          <a href="#">Unit 4</a>
+          <a href="#">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="#">Book 1</a>
+          <a href="#">Book 2</a>
+        </div>
+        <div class="units extra-units">
+          <a href="#">Extra 1</a>
+          <a href="#">Extra 2</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 StudyBuddy Team</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const specialization = params.get("specialization") || "Not selected";
+    const year = params.get("year") || "Not selected";
+    const semester = params.get("semester") || "Not selected";
+
+    document.getElementById("selectedInfo").textContent = 
+      `Specialization: ${specialization} | Year: ${year} | Semester: ${semester}`;
+
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".subject-card");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(query) ? "block" : "none";
+      });
+    });
+
+    function toggleUnits(btn, type) {
+      const card = btn.closest(".subject-card");
+
+      const allUnitBoxes = card.querySelectorAll(".units");
+      allUnitBoxes.forEach(box => box.style.display = "none");
+
+      const targetBox = card.querySelector("." + type + "-units");
+      if (targetBox) {
+        const isVisible = targetBox.style.display === "flex";
+        targetBox.style.display = isVisible ? "none" : "flex";
+      }
+    }
+  </script>
+
+</body>
+</html>

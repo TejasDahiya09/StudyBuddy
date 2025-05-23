@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Slider */
+.simple-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #002244;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.slider-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-finite 8s linear infinite;
+}
+
+.simple-slider:hover .slider-content {
+  animation-play-state: paused;
+}
+
+.slider-content span {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.slider-content a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.slider-content a:hover {
+  background-color: #ffffff33;
+  color: #ffcc00;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-decoration: underline;
+}
+
+@keyframes scroll-finite {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  background-color: #e2e8f0;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #003366, #004080, #0059b3);
+  color: white;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Explore Notes Button */
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background: #ffcc00;
+  color: #003366;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background: #ffd633;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Material Buttons including Syllabus */
+.links button,
+.links a {
+  margin: 6px;
+  padding: 0.6rem 1.2rem;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.4;
+  min-width: 100px;
+}
+
+.links button:hover,
+.links a:hover {
+  background-color: #002855;
+}
+
+/* Footer */
+footer {
+  background-color: #002b5c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}

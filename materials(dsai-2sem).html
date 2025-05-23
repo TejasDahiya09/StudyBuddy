@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyBuddy – Materials</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .selection-summary {
+      text-align: center;
+      margin: 2rem 1rem 1rem;
+      padding: 1rem;
+      background-color: #edf2f7;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    #searchInput {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      width: 90%;
+      max-width: 500px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    #searchInput:focus {
+      border-color: #004080;
+      box-shadow: 0 0 8px rgba(0, 64, 128, 0.2);
+    }
+
+    .materials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+    }
+
+    .subject-card {
+      background: white;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    .subject-card h3 {
+      font-size: 1.5rem;
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+
+    .links button, .links a {
+      margin: 6px;
+      padding: 0.6rem 1.2rem;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .links button:hover, .links a:hover {
+      background-color: #002855;
+    }
+
+    .units {
+      margin-top: 1rem;
+      display: none;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .units a {
+      padding: 0.5rem 1rem;
+      background-color: #005a8d;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .units a:hover {
+      background-color: #003f66;
+    }
+
+    footer {
+      margin-top: auto;
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StudyBuddy</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course-select.html">Materials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="selection-summary">
+      <h2 id="selectedInfo">Loading your selection...</h2>
+      <input type="text" id="searchInput" placeholder="Search subjects...">
+    </section>
+
+    <section class="materials" id="materialsList">
+
+      <!-- Subject Cards -->
+      <!-- Example: Operating Systems (5 Units) -->
+      <div class="subject-card">
+        <h3>Engineering Mathematics – II</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/1sTXcoEEiUEjmUg8JBmlKhkGBK4R-3RFd/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1GjDBH_pOFRnd7eCHDsSHvm3holGLxAr6/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1Ndt8-MsHhENAIPePl-KdNSBasGFw9sAk/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1dXQIfBdf806m8pCWH60YoRsERvhSzrQW/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1xS2Fxf2uGr0pZ8yUR5FQhmxPlExFcCUD/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="https://drive.google.com/file/d/1N9NggcrfGbsnBvhoX_wmCpT30ks5VJIc/view?usp=sharing" target="_blank">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/1rkkTx3li70bzV2ofWGJiUIbxDQnplScT/view?usp=sharing" target="_blank">Advanced Engineering Mathematics H.K. Dass</a>
+          <a href="https://drive.google.com/file/d/1y_rgU5WQtoJtEGOCJSbswLHoajWHE6Q1/view?usp=sharing" target="_blank">B.S. Greywal Higher Engineering Mathematics</a>
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/1GHPbPZkf47X_DT4GiTm1iIEiU7G4UqIN/view?usp=sharing" target="_blank">Maths Summary</a>
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Basic Electronics Engineering</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/1qD7GmGm5_Y8vQUNqHHpSyIdDFsbgW8KP/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1b2FSMndHOBsVOsJU89TGBtukqg2kQzLC/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1AGFQfNntKUS2If7Ry1TH_QZn0EQJeD2n/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1tiZ3YgCpYiIs10lH4cCaCtfzsArEr7Nt/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1eI4Ljn13jsg7LDBaX5k4B65aeb_fSYux/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="https://drive.google.com/file/d/1BX4mwimJhyeootm9f8E5KDwAmDTpFB_G/view?usp=sharing" target="_blank">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/1LII72Wymv-t_V9qfPmnsq4A4dWDHG66X/view?usp=sharing" target="_blank">Electronic Devices and Circuit Theory Book</a>
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/1Qe1SD8f-7TH4XMK1LenQH8PNNNY-gR0U/view?usp=sharing" target="_blank">Applications</a>
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Engineering Chemistry</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/17JD-ZopFAAuUc2MN9H4SFbFfUlkz6fGM/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1nlQzkXMYWqXkgesE3NqHM8HXL2UzgHrg/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1PpcBSja9VPuGviTl-LJanE6lpkkOcZ_3/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/14AvdRk3x8EX1Kifmv86vxUsSFgPdxQmI/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1xOFvXpwngCx6inEe_RCzWtdKqJG8d54S/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="https://drive.google.com/file/d/1n_uC-vxcCU6iZSGT46gJmdReOOMHl18R/view?usp=sharing" target="_blank">Unit 5</a>
+        </div>
+        <div class="units books-units">
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/17qRqRihA5ufoe2adPZTefslVtTPi_EXr/view?usp=sharing" target="_blank">Chemisry Unit-1 PPT</a>
+          <a href="https://drive.google.com/file/d/1gpBcw6GtcGPMN15Zj6eaL3FLivuqNx00/view?usp=sharing" target="_blank">Chemsitry Unit-2 PPT</a>
+          <a href="https://drive.google.com/file/d/1OAYaRqzBwuHkv-rn9cpGt4jFCFmhaP9J/view?usp=sharing" target="_blank">Question Bank Unit 2 Phase Rule</a>
+          <a href="https://drive.google.com/file/d/1eZFxgvYnAFfMn0dA2cTkCSHwxa1BNiCW/view?usp=sharing" target="_blank">Chemistry Unit-3 PPT</a>
+          <a href="https://docs.google.com/document/d/1AOGURGy6LnA96dNuIHbCHtFdRSYrtQv-/edit?usp=sharing&ouid=112903520822749457466&rtpof=true&sd=true" target="_blank">Practice Questions for Unit 3 Enginnering Chemistry</a>
+          <a href="https://drive.google.com/file/d/1ydjb-KSyAjKuV_B3TZFJDJqnzzpPPp8E/view?usp=sharing" target="_blank">Chemistry Unit-4 PPT</a>
+          <a href="https://drive.google.com/file/d/1lwZTdYw2FK5YRWCs_-_I6Q7YwL3Ji2Iw/view?usp=sharing" target="_blank">Chemistry Unit-5 PPT</a>
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Fundamentals of Computer and C programming</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/1SIu0Que0TtvDs7VSy5OVVbtLG65wZvAI/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1yim0dMIwjiSoFANt8x1qiaLmVt27_I9y/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/17wW5bRtkkc2nZwramaj-3xA06mTFmmwN/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1BR89FuKaTHFVey2uoYLlYov42BuiSLW_/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1A9PR9L_xqFKoBAA4UG-yjoeJpvsD6YCZ/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="https://drive.google.com/file/d/1pYoI7bhg2w1zFJbW57_t52Mv0gWXjpE7/view?usp=sharing" target="_blank">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/15bH2RoxD9dfXvs2Cd9g0EbVPfL3-_zx3/view?usp=sharing" target="_blank">Let us c - yashwantkanetkar</a>
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/11eN_r-Sce-MJhr_eGkuecUccHPhQ5JSH/view?usp=sharing" target="_blank">c unit 5</a>
+          <a href="https://drive.google.com/file/d/19vKSHJ5sLgBOqfr31vKM_cUDaVULBHIX/view?usp=sharing" target="_blank">File handling in C</a>
+          <a href="https://drive.google.com/file/d/1Fgyms6OA8Oga5eeHJwtEf3aBpqvs7Qlc/view?usp=sharing" target="_blank">Functions</a>
+          <a href="https://drive.google.com/file/d/1WFdjT6zX2QWkE2AZz4X_Ceh2gkBhOMQk/view?usp=sharing" target="_blank">Structure</a>
+          <a href="https://drive.google.com/file/d/1LM_vrieA1t_nyht_7xE-ueWdYF2Kieqz/view?usp=sharing" target="_blank">Unit 1_Computer Networks</a>
+          <a href="https://drive.google.com/file/d/1-wXxu5if9zx8zzVTrM7WPwgSPzn7hPQK/view?usp=sharing" target="_blank">UNIT-1 PPT</a>
+          <a href="https://drive.google.com/file/d/1LIg9zOdwGdHby4xMsiJQe6_1Cm25gcOI/view?usp=sharing" target="_blank">Unit-2&3</a>
+          <a href="https://drive.google.com/file/d/18myJpZPNnJCMdd24ScE9XTj7Cm4QpH0t/view?usp=sharing" target="_blank">UNIT-4</a>
+
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Indian Constitution & Polity</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/1BBWEdmkhQbPAC08xhAMVKezdArZxd632/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1e6bODFOUIxdZVNjHRNEDVGSiGgziQ8kF/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1hL_jUlyKyX6Wxq6Vefj_oDkOigkbp-f9/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1dP9DUkRcTOXI2Ft2vzNUnF5WU9Kzk4Pr/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1ad8VMtVYCUkBJBmGwT8H2-EnXH6g6z8_/view?usp=sharing" target="_blank">Unit 4</a>
+        </div>
+        <div class="units books-units">
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/10_tb9wWpU7Hlhc9g3T6FmdWwfb7WBIZM/view?usp=sharing" target="_blank">democracy types</a>
+          <a href="https://drive.google.com/file/d/1jJN14TsD-JTuRNiefI_dRcxBd8ZZkcD-/view?usp=sharing" target="_blank">Democracy</a>
+          <a href="https://drive.google.com/file/d/1S5yPEk7-sMvMvubXLymXAJRZlgtaBNs2/view?usp=sharing" target="_blank">democracy</a>
+          <a href="https://drive.google.com/file/d/1VBssqlwHAYp0Ecqg7x8TZncvFSdFdI3n/view?usp=sharing" target="_blank">Electoral Pol.pragat</a>
+          <a href="https://drive.google.com/file/d/1pZKp6PtTBSSBdIcx-JHb27dRLtT1JLTs/view?usp=sharing" target="_blank">Electoral Politics</a>
+          <a href="https://drive.google.com/file/d/12q4YxWatI_HUW2pnlhD8waVuQpoxcWR9/view?usp=sharing" target="_blank">Electoral Politics.pragat</a>
+          <a href="https://drive.google.com/file/d/1FYpAgoNt6nzxXDZ4aKeJ42YIV9HrDpsR/view?usp=sharing" target="_blank">India vs USA Parliamentary System</a>
+          <a href="https://drive.google.com/file/d/1eBIEoPA3cj51hE5tiRt689Gnv1jcDMjA/view?usp=sharing" target="_blank">Politics Notes</a>
+          <a href="https://drive.google.com/file/d/1kRLtJoVlf2EkfpTFGP7tiZ6a6TvTUVHQ/view?usp=sharing" target="_blank">Polity Full PDF</a>
+          <a href="https://drive.google.com/file/d/1KkbfyH4jlHu6VdPMhX2F_4ussToCHnwr/view?usp=sharing" target="_blank">Polity Notes (ALL IN 1)</a>
+          <a href="https://drive.google.com/file/d/1zwkiojuNsHtQjvIe2d00G8HTspKELXzp/view?usp=sharing" target="_blank">Polity Questions</a>
+          <a href="https://drive.google.com/file/d/1UUpjprciC1Rv4aj4g7EBE243OotU9ssO/view?usp=sharing" target="_blank">Polity</a>
+          <a href="https://drive.google.com/file/d/1ClqV0OWZTTVewjf2LM1BFFaoXXxY621R/view?usp=sharing" target="_blank">Preamble.pragat</a>
+          <a href="https://drive.google.com/file/d/102hhlfpn0LkeLS9jqa4KcRLHkTAerkJz/view?usp=sharing" target="_blank">Sheet-3 (INGREDIENTS OF THE PREAMBLE)</a>
+          <a href="https://drive.google.com/file/d/11vKLcrME61ryqk8-I2kvsMkPdAEw87PA/view?usp=sharing" target="_blank">Sheet-4 (ELECTORAL POLITICS IN INDIA)</a>
+          <a href="https://drive.google.com/file/d/1QtUyDQMJggah9v8acrXIljZWcXwA-R2V/view?usp=sharing" target="_blank">Sheet-5 (Difference Between Direct Democracy and Indirect Democracy)</a>
+          <a href="https://drive.google.com/file/d/1e3mKJI13IcYCslqHRCOq1CAJysQ_jePR/view?usp=sharing" target="_blank">Sheet-7 (POLL)</a>
+          <a href="https://drive.google.com/file/d/1oqIHWRGSt-XD4g2aOAd5xqFAT9MhLXiY/view?usp=sharing" target="_blank">Sheet-8 (CONCEPT OF DIVERSITY)</a>
+          
+          
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 StudyBuddy Team</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const specialization = params.get("specialization") || "Not selected";
+    const year = params.get("year") || "Not selected";
+    const semester = params.get("semester") || "Not selected";
+
+    document.getElementById("selectedInfo").textContent = 
+      `Specialization: ${specialization} | Year: ${year} | Semester: ${semester}`;
+
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".subject-card");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(query) ? "block" : "none";
+      });
+    });
+
+    function toggleUnits(btn, type) {
+      const card = btn.closest(".subject-card");
+
+      const allUnitBoxes = card.querySelectorAll(".units");
+      allUnitBoxes.forEach(box => box.style.display = "none");
+
+      const targetBox = card.querySelector("." + type + "-units");
+      if (targetBox) {
+        const isVisible = targetBox.style.display === "flex";
+        targetBox.style.display = isVisible ? "none" : "flex";
+      }
+    }
+  </script>
+
+</body>
+</html>

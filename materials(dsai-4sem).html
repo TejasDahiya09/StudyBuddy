@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyBuddy – Materials</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .selection-summary {
+      text-align: center;
+      margin: 2rem 1rem 1rem;
+      padding: 1rem;
+      background-color: #edf2f7;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    #searchInput {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      width: 90%;
+      max-width: 500px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    #searchInput:focus {
+      border-color: #004080;
+      box-shadow: 0 0 8px rgba(0, 64, 128, 0.2);
+    }
+
+    .materials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+    }
+
+    .subject-card {
+      background: white;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    .subject-card h3 {
+      font-size: 1.5rem;
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+
+    .links button, .links a {
+      margin: 6px;
+      padding: 0.6rem 1.2rem;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .links button:hover, .links a:hover {
+      background-color: #002855;
+    }
+
+    .units {
+      margin-top: 1rem;
+      display: none;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .units a {
+      padding: 0.5rem 1rem;
+      background-color: #005a8d;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .units a:hover {
+      background-color: #003f66;
+    }
+
+    footer {
+      margin-top: auto;
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StudyBuddy</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course-select.html">Materials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="selection-summary">
+      <h2 id="selectedInfo">Loading your selection...</h2>
+      <input type="text" id="searchInput" placeholder="Search subjects...">
+    </section>
+
+    <section class="materials" id="materialsList">
+
+      <!-- Subject Cards -->
+      <!-- Example: Operating Systems (5 Units) -->
+      <div class="subject-card">
+        <h3>Operating Systems (OS)</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/1AG08mQxcCBW5w8xj51FhN01613E01ouU/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1Qv74k9JPvEgUh8iD_gZ6nnzMPhNTITAX/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1ipGuUswkO5DzRfBAzdKrw1J--nhofO98/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1iLIVR70WVj0yRT_aWqsDQU0seaizyWX9/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/15rEbXv4wcC4aWhT9StJPjLOrqeUVkxI5/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="#">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/1X5QaDGUCL9tiXOzlGikCzvd4mpOMldB_/view?usp=sharing" target="_blank">Abraham-Silberschatz-Operating-System-Concepts</a>
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/1oSVCwq4gObKdLAqG77WQBbEGNbTrUVtu/view?usp=sharing" target="_blank">Complete_OS_Btech</a>
+          <a href="https://drive.google.com/file/d/1vIBGUR8U8SP_lbPieVcSpM_MznDqWNjm/view?usp=sharing" target="_blank">Multithreading</a>
+          <a href="https://drive.google.com/file/d/1eYizDYYtRcnUGhVKPcOzrSFd6R0HvVaO/view?usp=sharing" target="_blank">Operating-System</a>
+          <a href="https://drive.google.com/file/d/1tJcFpFpx2HXVAuqwhpJptWX8xB4K-DeC/view?usp=sharing" target="_blank">Os Notes</a>
+          <a href="https://drive.google.com/file/d/1hJTWiPNaTiI0S06UphAC-WBGgpQYPrwL/view?usp=sharing" target="_blank">OS-COMPLETE-HANDWRITTEN-NOTES</a>
+          <a href="https://drive.google.com/file/d/1TV38Xs8NDxED17EkaxnjupPiasqqHkVg/view?usp=sharing" target="_blank">OS Architecture</a>
+          <a href="https://drive.google.com/file/d/1Wkh_97M8PIPlWEvzvVWxcIaRfKDM9LqX/view?usp=sharing" target="_blank">Process Schedulers in Operating System</a>
+          <a href="https://drive.google.com/file/d/1RhmNWjvOq62L0DXZCgWNpIFCqTxjw_1z/view?usp=sharing" target="_blank">Deadlock Questions</a>
+          <a href="https://drive.google.com/file/d/1tjbyRZT7imck2XtHJnPd_GDOviLgylZV/view?usp=sharing" target="_blank">Unit-4 Memory_Numericals</a>
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Statistical Methods (SM)</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/1Cha0afFUNXEZ0-IqiNiqfXBi7Ro_NIxz/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1X0y7-H5kY5K2sYThp_FT58h7dzhwL6Jh/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1hPYwkRQOTJsLfpBnr3qVN8BswTs1HGul/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1JRfp2Dm-gohvWMRujhGZ9QYQ4NmJ7vFF/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="">Unit 4</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/1mYFVRpeiQRYRbVn-vSdgdlYGy1GQutiE/view?usp=sharing" target="_blank">Business-Statistics J.K. Sharma</a>
+          <a href="https://drive.google.com/file/d/1DGx8cPS5Ef7cP9XtQZCGGRpTkeP2zlIq/view?usp=sharing" target="_blank">Statistical Methods S.P. Gupta</a>
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/17cRxWhVZNGsT1I0OV_1NdIPrEjnKdmnK/view?usp=sharing" target="_blank">SM Theory-1</a>
+          <a href="https://drive.google.com/file/d/1LwTEqq5MamfJyvjrxYEXKlI5XINJaG05/view?usp=sharing" target="_blank">SM Theory-2</a>
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Theory of Computation (TOC)</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/17TBQuvQ5YwRLxIGxDUdIM9j2Uk2UGQSb/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1I7XWwpEZE63OCfr7hRN3hYgS8LZudLsc/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1MQI8GWj_wxUOE0b5tvRQsJWgFxVoOwQ2/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/14_P8LjSIPBEtPC1zrnpUXMiOOyNwtOSN/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1nrID1Fm1sOgf1Uk14bCk-zTuk-_-TGF2/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="#">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/1gfLzktIGc2xvm49dBP_nP-iAsIKWuuix/view?usp=sharing" target="_blank">TOC K.L.P Mishra</a>
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/1qWUj2cNa_df9Ma2YzcWBIktbmTPJXcEl/view?usp=sharing" target="_blank">Complete_TOC</a>
+          <a href="https://drive.google.com/file/d/1y5iMscOLZ7MenMUEBFBBFpgDEtj2ol_e/view?usp=sharing" target="_blank">LR(K) Grammer</a>
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Agile Development Methodology</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/13OtVTisD24t_wP69xRDRIC_7GVV7oNtq/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1XWdb4bbE7OXWHPyjEiZIOk4_SrCumwJa/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1ORTfqU8PsgSqVoz5EANnMGFK8KiCPS4Q/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1NxHNtl6zGOjkIlkASmKK9paaN6u2LQg-/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/1wQDsHONXKNaidsKPjJ6X7HHkXR42PcQi/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="#">Unit 5</a>
+        </div>
+        <div class="units books-units">
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/1a_QztEeiwZAfpT414pp3vJd_mgq7yBUA/view?usp=sharing" target="_blank">Agile Complete</a>
+          <a href="https://drive.google.com/file/d/1WIElcloI0yGiTM4Gk_hPepoBD1Em48jt/view?usp=sharing" target="_blank">agile presentation</a>
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Cloud Application Development (CAD)</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/135GeRjO5ZhCKOVgfELiA03dojJa15AZ4/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="https://drive.google.com/file/d/1iOVNBBEPmC39U1Oy7596uIYqPhQQGA2P/view?usp=sharing" target="_blank">Unit 1</a>
+          <a href="https://drive.google.com/file/d/1wzVfZqCsHiIrr2VEb5JMpBENLvJf9npS/view?usp=sharing" target="_blank">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1XnqGvBjSSRKVBbb4DLh3yHLirFNHDyCB/view?usp=sharing" target="_blank">Unit 3</a>
+          <a href="https://drive.google.com/file/d/11w36KHJizmnGGb8in9qNSt9fMJlJ7M21/view?usp=sharing" target="_blank">Unit 4</a>
+          <a href="#">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/1B18h3w6s5IIDoaA-4FVFni8U387Oqk-7/view?usp=sharing">Essentials of Application
+Development on IBM Cloud</a>  
+        </div>
+        <div class="units extra-units">
+          <a href="#">Extra 1</a>
+          <a href="#">Extra 2</a>
+          
+        </div>
+      </div>
+
+      <div class="subject-card">
+        <h3>Analysis and Design of Algorithms (ADA)</h3>
+        <div class="links">
+          <button onclick="toggleUnits(this, 'notes')">Notes</button>
+          <button onclick="toggleUnits(this, 'books')">Books</button>
+          <button onclick="toggleUnits(this, 'extra')">Extra</button>
+          <a href="https://drive.google.com/file/d/1OXXfOdYz5fe-zHbHPM6kKU0tJgk-0Tyq/view?usp=sharing" target="_blank">Syllabus</a>
+        </div>
+        <div class="units notes-units">
+          <a href="#">Unit 1</a>
+          <a href="#">Unit 2</a>
+          <a href="https://drive.google.com/file/d/1IEw6tRmsYvba0UtPSYWTo9OeYPF4yog8/view?usp=sharing"target="_blank">Unit 3</a>
+          <a href="#">Unit 4</a>
+          <a href="#">Unit 5</a>
+        </div>
+        <div class="units books-units">
+          <a href="https://drive.google.com/file/d/130FgflN8TrIe9m8gdGmIgVpVZVgg8JKk/view?usp=sharing">ADA</a>
+        </div>
+        <div class="units extra-units">
+          <a href="https://drive.google.com/file/d/1t0XGVXw-25vT0Voczmj8L-N7qoXwMKp-/view?usp=sharing"target="_blank">ADA</a>
+          <a href="https://drive.google.com/file/d/1XEqgRNZlxLFPOqv0ZbZF0s1qFdfjQHHy/view?usp=sharing"target="_blank">Copy of Design-and-Analysis-of-Algorithms</a>
+          <a href="https://drive.google.com/file/d/12_zYdhYn95linH2VEui_gzTxQmgkTSkd/view?usp=sharing"target="_blank">DAA-MODULE-1-COE</a>
+          <a href="https://drive.google.com/file/d/1V3NNvCcwAvxHpD1jQaV21mu1dpIKI8Rh/view?usp=sharing"target="_blank">DAAMastertheorem</a>
+          <a href="https://drive.google.com/file/d/1wW-Vd1yWj_4FfPavfFl5zSAWSb25SLaP/view?usp=sharing"target="_blank">Design-and-Analysis-of-Algorithms Complete</a>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 StudyBuddy Team</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const specialization = params.get("specialization") || "Not selected";
+    const year = params.get("year") || "Not selected";
+    const semester = params.get("semester") || "Not selected";
+
+    document.getElementById("selectedInfo").textContent = 
+      `Specialization: ${specialization} | Year: ${year} | Semester: ${semester}`;
+
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".subject-card");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(query) ? "block" : "none";
+      });
+    });
+
+    function toggleUnits(btn, type) {
+      const card = btn.closest(".subject-card");
+
+      const allUnitBoxes = card.querySelectorAll(".units");
+      allUnitBoxes.forEach(box => box.style.display = "none");
+
+      const targetBox = card.querySelector("." + type + "-units");
+      if (targetBox) {
+        const isVisible = targetBox.style.display === "flex";
+        targetBox.style.display = isVisible ? "none" : "flex";
+      }
+    }
+  </script>
+
+</body>
+</html>
